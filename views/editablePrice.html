@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Price Review</title>
+<link rel="stylesheet" type="text/css" href="./css/AddedCategory.css">
+
+ 
+    <script src="./js/AddedCategory.js"></script>
+</head>
+
+<body>
+
+
+  <h1>Accounts</h1>
+
+  <table>
+    <tr>
+      <td><button onclick="showAccountTypeForm()">Add new Account Type</button></td>
+    </tr>
+    <tr>
+      <td>
+        Select a Account Type:
+        <select id="account-type" onclick="showRow()" value="selectaccount">
+          
+          <!-- Replace with Thymeleaf loop -->
+          <option>select</option>
+          <option th:each="account : ${accountTypes}" th:value="${account.getAccountId()}" th:text="${account.getAccountType()}"></option>
+        </select>
+        <div id="information"></div>
+      </td>
+    </tr>
+  </table>
+  
+  <br><br>
+
+</body>
+</html>
